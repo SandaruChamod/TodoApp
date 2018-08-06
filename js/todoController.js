@@ -133,6 +133,7 @@ function checkKeyCodeToUpdate(event, id, newText) {
     Update Item event.
     @param {id, newText} component id , new value
  */
+
 function updateItem(id, newValue) {
     newValue = newValue.trim();
     if (newValue === "") {
