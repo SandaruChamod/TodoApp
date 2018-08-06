@@ -1,0 +1,116 @@
+#navBar {
+    background-color: black !important;
+    position: static;
+
+}
+
+#logo {
+    /*padding-left: 250px;*/
+}
+
+#appName {
+    color: white;
+    font-family: Anton;
+    font-size: 30px;
+    color: #1e87f0;
+}
+
+.check {
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+.check:hover {
+    transform: scale(1.5, 1.5); /** default is 1, scale it to 1.5 */
+}
+
+.delete {
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.delete:hover {
+    transform: scale(1.5, 1.5); /** default is 1, scale it to 1.5 */
+}
+
+.btn-style {
+    width: 100px;
+    top: 5px;
+    height: 41px;
+}
+
+body {
+    background-color: lightgray;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+}
+
+.todoItem {
+    margin-top: 10px;
+}
+
+.img {
+    margin: 12px;
+}
+
+.cont {
+    margin: 10px;
+}
+
+.curve {
+    border-radius: 15px !important;
+}
+
+.item {
+    height: 10px;
+    background-color: lightslategray;
+}
+
+h3 {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.success {
+    background-color: #adff2fa3 !important;
+    border-radius: 15px !important;
+    text-decoration: line-through;
+}
+
+.todo-title {
+    font-size: 15px;
+    text-align: initial;
+    margin-bottom: 10px;
+}
+
+.todo-footer {
+    font-size: 10px;
+    bottom: 0;
+}

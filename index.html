@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--start html-->
+<html lang="en">
+<!--start head-->
+<head>
+    <meta charset="UTF-8">
+    <!--Title-->
+    <title>TodoApp</title>
+    <!--End Title-->
+
+    <!--uiKit Stylesheets-->
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/uikit-rtl.min.css">
+    <!--end uikit stylesheet-->
+
+    <!--import style.css stylesheet-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--end import style.css stylesheet-->
+
+    <!--import fill.css stylesheet-->
+    <link rel="stylesheet" href="css/fill.css">
+    <!--end import fill.css stylesheet-->
+
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <!--End google Fonts-->
+
+    <!--Load Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icon/favicon-16x16.png">
+    <link rel="manifest" href="/images/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--End Favicon-->
+
+    <!-- Add font-awsome icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- End font-awsome icon library -->
+
+
+</head>
+<!--end head-->
+<!--start body-->
+<body>
+<!--start header-->
+<header>
+    <!--start nav-->
+    <nav id="navBar" class="uk-navbar-container uk-margin" uk-navbar>
+        <div class="uk-navbar-center">
+
+            <a id="logo" class="uk-navbar-item uk-logo" href="#"><img src="images/todo-logo.png"></a>
+
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a id="appName" href="#">
+                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                        To-Do App
+                    </a>
+                </li>
+            </ul>
+
+            <div class="uk-navbar-item">
+                <form action="javascript:void(0)">
+                    <input id="activityText" class="uk-input uk-form-width-large" type="text"
+                           placeholder="Add Activity">
+                    <button id="addBtn" class="bttn-fill bttn-md btn-style bttn-primary">Add</button>
+                </form>
+            </div>
+
+        </div>
+    </nav>
+    <!--end nav-->
+</header>
+<!--end header-->
+
+<!--start container-->
+<div id="containerId" class="uk-container container">
+
+</div>
+<!--end container-->
+
+
+<!--<svg  viewBox="0 0 1336 100" preserveAspectRatio="none" id="svg" role="presentation" aria-hidden="true">-->
+<!--<polygon points="-1 90,1336 -20,000 -50,0 0" fill="whitesmoke"></polygon>-->
+<!--</svg>-->
+
+<!--start footer-->
+<footer>
+    <div class="footer">
+        <p style="padding-top: 10px;">2018 All Rights Reserved.</p>
+        <a href="#" class="fab fa-twitter-square"></a>
+        <a href="#" class="fab fa-google-plus-square"></a>
+        <a href="#" class="fab fa-facebook-square"></a>
+    </div>
+</footer>
+<!--end footer-->
+
+<!--import ulkit javascript files-->
+<script type="text/javascript" src="js/uikit-icons.js"></script>
+<script type="text/javascript" src="js/uikit.js"></script>
+
+<!--end import ulkit javascript files-->
+
+<!--import toDoController.js-->
+<script type="text/javascript" src="js/todoController.js"></script>
+<!--end import toDoController.js-->
+</body>
+<!--end body-->
+</html>
+<!--end html-->
