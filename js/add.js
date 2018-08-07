@@ -3,11 +3,11 @@
  * @param e - click event
  */
 findComponentById('addBtn').addEventListener('click', function (e) {
-    let inputTextComponent = findComponentById('activityText');
+    const inputTextComponent = findComponentById('activityText');
     let inputTextValue = inputTextComponent !== null ? inputTextComponent.value : undefined;
     if (!inputTextValue) return;
     dataList = getData("todoList");
-    let task = findElementByValue(dataList, inputTextValue);
+    let task = dataList.find(k => k.name === inputTextValue);
     if (task) {
         return;
     }

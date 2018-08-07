@@ -8,7 +8,7 @@ function onBlur(id, newValue) {
     if (newValue === "") {
         reloadPage();
     } else {
-        let item = findElementByValue(dataList, id);
+        let item = dataList.find(k => k.name === id);
         if (item) {
             item.name = newValue;
             setData("todoList", dataList);

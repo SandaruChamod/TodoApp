@@ -5,13 +5,13 @@
 function onCompletButtonClick(id) {
     let toDoItem = findComponentById(id);
     dataList = getData("todoList");
-    let item = findElementByValue(dataList, id);
+    let item = dataList.find(k => k.name === id);
     if (item && toDoItem) {
         if (item.completed) {
             toDoItem.classList.remove("success");
             item.completed = false;
         } else {
-            let index = findIndexByValue(dataList, item.name);
+            let index = dataList.findIndex(k => k.name === item.name);
             if (index > -1) {
                 dataList.splice(index, 1);
                 dataList.push({name: item.name, completed: true});
