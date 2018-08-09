@@ -1,25 +1,29 @@
 /**
  * @desc Completed button click event.
- * @param id - name of the completed item
+ * @param buttonId - name of the completed item
  */
-function onCompletButtonClick(id) {
-    let toDoItem = findComponentById(id);
+function onCompletButtonClick(buttonId) {
+    let id = buttonId.parentNode.parentNode.parentNode.id;
+
+    let toDoItem = findDOMElement(id).firstElementChild;
+    if (!toDoItem) return;
+
     dataList = getData("todoList");
-    let item = dataList.find(k => k.name === id);
-    if (item && toDoItem) {
-        if (item.completed) {
-            toDoItem.classList.remove("success");
-            item.completed = false;
-        } else {
-            let index = dataList.findIndex(k => k.name === item.name);
-            if (index > -1) {
-                dataList.splice(index, 1);
-                dataList.push({name: item.name, completed: true});
-                toDoItem.classList.add("success");
-                toDoItem.classList.add("curve");
-            }
-        }
+
+    let item = dataList.find(item => item.name === id);
+    if (!item) return;
+    let itemIndex = dataList.findIndex(value => value.name === item.name);
+
+    if (item.completed) {
+        item.completed = false;
+        let itemToDelete = findDOMElement(id);
+        if (itemToDelete) itemToDelete.remove();
+        addDOMItems(item.name, false);
+    } else {
+        item.completed = true;
+        let itemToDelete = findDOMElement(id);
+        if (itemToDelete) itemToDelete.remove();
+        addDOMItems(item.name, true);
     }
     setData("todoList", dataList);
-    reloadPage();
 }

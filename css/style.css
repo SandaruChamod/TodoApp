@@ -44,8 +44,8 @@
 
 body {
     background-color: lightgray;
-    height: 100%;
-    position: relative;
+    /*height: 100%;*/
+    /*position: relative;*/
     margin: 0;
     min-height: 100%;
 }
@@ -77,7 +77,8 @@ h3 {
 }
 
 .footer {
-    position: fixed;
+    margin-top: 30px;
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;

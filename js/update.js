@@ -8,11 +8,13 @@ function onBlur(id, newValue) {
     if (newValue === "") {
         reloadPage();
     } else {
-        let item = dataList.find(k => k.name === id);
+        let toDoItem = findDOMElement(id).firstElementChild;
+        let item = dataList.find(item => item.name === id);
         if (item) {
             item.name = newValue;
             setData("todoList", dataList);
-            reloadPage();
+            toDoItem.id = newValue;
+            toDoItem.childNodes[0].data = newValue;
         }
     }
 }
@@ -27,6 +29,6 @@ function onKeyDown(event, id, newValue) {
     if (event.keyCode === 13) {
         event.preventDefault();
         onBlur(id, newValue);
-        reloadPage();
+        event.target.blur();
     }
 }

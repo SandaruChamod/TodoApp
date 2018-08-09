@@ -2,6 +2,10 @@
     Array for store to-dos
  */
 let dataList;
+/*
+    Array for store DOM elements
+ */
+let domList = [];
 
 
 /**
@@ -9,10 +13,9 @@ let dataList;
  */
 window.onload = function () {
     dataList = getData("todoList");
-    if (dataList) {
-        if (dataList.length > 0) {
-            addDOMItems();
-        }
+    if (dataList.length > 0) {
+        for (let i = 0; i < dataList.length; i++) addDOMItems(dataList[i].name, dataList[i].completed);
+        domList = document.querySelectorAll('.wrapper');
     }
 };
 
