@@ -3,16 +3,16 @@
  * @param e - click event
  */
 findComponentById('addBtn').addEventListener('click', function (e) {
-    const inputTextValue = findComponentById('activityText').value;
-    if (!inputTextValue) return;
+    const INPUT_TEXT_VALUE = findComponentById('activityText').value;
+    if (!INPUT_TEXT_VALUE) return;
     dataList = getData("todoList");
-    let task = dataList.find(item => item.name === inputTextValue);
+    let task = dataList.find(item => item.name === INPUT_TEXT_VALUE);
     if (task) {
         return;
     }
-    dataList.push({name: inputTextValue, completed: false});
+    dataList.push({name: INPUT_TEXT_VALUE, completed: false});
     setData("todoList", dataList);
-    addDOMItems(inputTextValue, false);
+    addDOMItems(INPUT_TEXT_VALUE, false);
     findComponentById('activityText').value = '';
     this.blur();
 });

@@ -11,8 +11,8 @@ function findComponentById(id) {
  * @param id - component's id
  */
 function findDOMElement(id) {
-    const array = Array.from(domList);
-    return array.find(item => item.firstElementChild.id === id);
+    const DOM_ARRAY = Array.from(domList);
+    return DOM_ARRAY.find(item => item.firstElementChild.id === id);
 }
 
 /**
