@@ -1,8 +1,10 @@
+import {domList,setDOMList} from './main.js'
+
 /**
- *  Find component by id
- * @param id - component's id
- */
-function findComponentById(id) {
+  *  Find component by id
+  * @param id - component's id
+  */
+export function findComponentById(id) {
     return document.getElementById(id);
 }
 
@@ -10,7 +12,7 @@ function findComponentById(id) {
  *  Find DOM element
  * @param id - component's id
  */
-function findDOMElement(id) {
+export function findDOMElement(id) {
     const DOM_ARRAY = Array.from(domList);
     return DOM_ARRAY.find(item => item.firstElementChild.id === id);
 }
@@ -18,7 +20,7 @@ function findDOMElement(id) {
 /**
  *  Load DOM elements
  */
-function loadDOMElements() {
-    domList = document.querySelectorAll('.wrapper');
+export function loadDOMElements() {
+    setDOMList(document.querySelectorAll('.wrapper'));
 }
 

@@ -1,17 +1,21 @@
+import {dataList,reloadPage} from './main.js'
+import {findDOMElement} from './util.js'
+import {setData} from './storageUtility.js'
+
 /**
  * @desc Update Item event.
  * @param id - name of the item to update
  * @param newValue - new name value to update
  */
-function onBlur(id, newValue) {
+export function onBlurFromBody(id, newValue) {
     newValue = newValue.trim();
     if (newValue === "") {
         reloadPage();
     } else {
         let toDoItem = findDOMElement(id).firstElementChild;
-        let item = dataList.find(item => item.name === id);
+        let item = dataList.find(item => item._itemName === id);
         if (item) {
-            item.name = newValue;
+            item._itemName = newValue;
             setData("todoList", dataList);
             toDoItem.id = newValue;
             toDoItem.childNodes[0].data = newValue;
@@ -25,10 +29,10 @@ function onBlur(id, newValue) {
  * @param id - name of the item to update
  * @param newValue - new name value to update
  */
-function onKeyDown(event, id, newValue) {
+export function onKeyDown(event, id, newValue) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        onBlur(id, newValue);
+        onBlurFromBody(id, newValue);
         event.target.blur();
     }
 }

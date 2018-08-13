@@ -1,18 +1,28 @@
+import {dataList,setDataList,pushDataToDataList} from './main.js'
+import {onBlurFromBody,onKeyDown} from './update.js'
+import {onDeleteButtonClick} from './delete.js'
+import {onCompletButtonClick} from './complete.js'
+import {findComponentById,loadDOMElements} from './util.js'
+import {setData,getData} from './storageUtility.js'
+import Todo from "./todo.js";
+
 /**
  * @desc Event Listner for addBtn
  * @param e - click event
  */
 findComponentById('addBtn').addEventListener('click', function (e) {
-    const INPUT_TEXT_VALUE = findComponentById('activityText').value;
-    if (!INPUT_TEXT_VALUE) return;
-    dataList = getData("todoList");
-    let task = dataList.find(item => item.name === INPUT_TEXT_VALUE);
+    const inputTextValue = findComponentById('activityText').value;
+    if (!inputTextValue) return;
+    if ((getData("todoList")).length > 0){
+        setDataList(getData("todoList"));
+    }
+    let task = dataList.find(item => item._itemName === inputTextValue);
     if (task) {
         return;
     }
-    dataList.push({name: INPUT_TEXT_VALUE, completed: false});
+    pushDataToDataList(new Todo(inputTextValue,false));
     setData("todoList", dataList);
-    addDOMItems(INPUT_TEXT_VALUE, false);
+    addDOMItem(inputTextValue,false);
     findComponentById('activityText').value = '';
     this.blur();
 });
@@ -21,11 +31,11 @@ findComponentById('addBtn').addEventListener('click', function (e) {
 /**
  * @desc Load data to DOM
  */
-function addDOMItems(taskName, completed) {
+export function addDOMItem(taskName,completed) {
     let container = findComponentById("containerId");
     if (container) {
-        container.insertAdjacentHTML(completed === false ? 'afterbegin' : 'beforeend', '<div class="uk-card-small uk-card-hover uk-card-default wrapper inner todoItem curve">\n' +
-            '        <div id="' + taskName + '" class="uk-card-body body" uk-tooltip="title:Click to edit; pos: left" contenteditable="true" onkeydown="onKeyDown(event,this.id,this.innerText)" onblur="onBlur(id,this.innerText)">' + taskName +
+        container.insertAdjacentHTML(completed === false ?'afterbegin':'beforeend','<div class="uk-card-small uk-card-hover uk-card-default wrapper inner todoItem curve">\n' +
+            '        <div id="' + taskName + '" class="uk-card-body body" uk-tooltip="title:Click to edit; pos: left" contenteditable="true" onkeydown="onKeyDown(event,this.id,this.innerText)" onblur="onBlurFromBody(id,this.innerText)">' + taskName +
             '            <div class="uk-align-right">\n' +
             '                <a><img id="' + taskName + '" onclick="onCompletButtonClick(this)" class="check" src="images/checked_small.png"></a>\n' +
             '                <a><img id="' + taskName + '" onclick="onDeleteButtonClick(this)" class="close delete" src="images/delete_small.png"></a>\n' +
@@ -33,6 +43,7 @@ function addDOMItems(taskName, completed) {
             '        </div>\n' +
             '    </div>');
 
+        initFunctions();
         loadDOMElements();
         let newlyAddedComponent = findComponentById(taskName);
         if (completed) {
@@ -40,4 +51,14 @@ function addDOMItems(taskName, completed) {
             newlyAddedComponent.classList.add("curve");
         }
     }
+}
+
+/**
+ * @desc Init module methods for DOM use
+ */
+function initFunctions() {
+    window.onCompletButtonClick = onCompletButtonClick;
+    window.onDeleteButtonClick = onDeleteButtonClick;
+    window.onKeyDown = onKeyDown;
+    window.onBlurFromBody = onBlurFromBody;
 }

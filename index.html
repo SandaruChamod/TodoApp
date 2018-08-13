@@ -51,7 +51,6 @@
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- End font-awsome icon library -->
 
-
 </head>
 <!--end head-->
 <!--start body-->
@@ -62,7 +61,7 @@
     <nav id="navBar" class="uk-navbar-container uk-margin" uk-navbar>
         <div class="uk-navbar-center">
 
-            <a id="logo" class="uk-navbar-item uk-logo" href="#"><img src="images/todo-logo.png"></a>
+            <a id="logo" class="uk-navbar-item uk-logo" href="#"><img type="module" src="images/todo-logo.png"></a>
 
             <ul class="uk-navbar-nav">
                 <li>
@@ -110,19 +109,20 @@
 <!--end footer-->
 
 <!--import ulkit javascript files-->
-<script type="text/javascript" src="js/frameworks/uikit-icons.js"></script>
-<script type="text/javascript" src="js/frameworks/uikit.js"></script>
+<script src="js/frameworks/uikit-icons.js"></script>
+<script src="js/frameworks/uikit.js"></script>
 
 <!--end import ulkit javascript files-->
 
 <!--import controllers & modules-->
-<script type="text/javascript" src="js/storageUtility.js"></script>
-<script type="text/javascript" src="js/util.js"></script>
-<script type="text/javascript" src="js/add.js"></script>
-<script type="text/javascript" src="js/update.js"></script>
-<script type="text/javascript" src="js/delete.js"></script>
-<script type="text/javascript" src="js/complete.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/add.js"></script>
+<script type="module" src="js/complete.js"></script>
+<script type="module" src="js/delete.js"></script>
+<script type="module" src="js/storageUtility.js"></script>
+<script type="module" src="js/todo.js"></script>
+<script type="module" src="js/update.js"></script>
+<script type="module" src="js/util.js"></script>
 <!--end import controllers & modules-->
 </body>
 <!--end body-->

@@ -3,7 +3,7 @@
  * @param key - key value to search
  * @return list - success or failure
  */
-function getData(key) {
+export function getData(key) {
     const LIST_OF_DATA = localStorage.getItem(key);
     return LIST_OF_DATA !== null ? JSON.parse(LIST_OF_DATA) : [];
 }
@@ -14,6 +14,6 @@ function getData(key) {
  * @param value - value to store
  * @return list - success or failure
  */
-function setData(key, value) {
+export function setData(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
