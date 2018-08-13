@@ -1,9 +1,9 @@
-import {dataList,setDataList,pushDataToDataList} from './main.js'
-import {onBlurFromBody,onKeyDown} from './update.js'
+import {dataList, pushDataToDataList, setDataList} from './main.js'
+import {onBlurFromBody, onKeyDown} from './update.js'
 import {onDeleteButtonClick} from './delete.js'
 import {onCompletButtonClick} from './complete.js'
-import {findComponentById,loadDOMElements} from './util.js'
-import {setData,getData} from './storageUtility.js'
+import {findComponentById, loadDOMElements} from './util.js'
+import {getData, setData} from './storageUtility.js'
 import Todo from "./todo.js";
 
 /**
@@ -26,7 +26,6 @@ findComponentById('addBtn').addEventListener('click', function (e) {
     findComponentById('activityText').value = '';
     this.blur();
 });
-
 
 /**
  * @desc Load data to DOM

@@ -1,4 +1,4 @@
-import {domList,setDOMList} from './main.js'
+import {domList, setDOMList} from './main.js'
 
 /**
   *  Find component by id
@@ -16,6 +16,7 @@ export function findDOMElement(id) {
     const DOM_ARRAY = Array.from(domList);
     return DOM_ARRAY.find(item => item.firstElementChild.id === id);
 }
+
 
 /**
  *  Load DOM elements

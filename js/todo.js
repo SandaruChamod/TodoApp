@@ -4,7 +4,6 @@ export default class Todo{
         this._completed = completed;
     }
 
-
     get itemName() {
         return this._itemName;
     }

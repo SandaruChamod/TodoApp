@@ -3,6 +3,7 @@ import {getData} from './storageUtility.js'
 /*
     Array for store to-dos
  */
+
 export var dataList;
 /*
     Array for store DOM elements

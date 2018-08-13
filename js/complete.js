@@ -1,14 +1,14 @@
-import {dataList,setDataList} from './main.js'
+import {dataList, setDataList} from './main.js'
 import {findDOMElement} from './util.js'
 import {addDOMItem} from './add.js'
-import {getData,setData} from './storageUtility.js'
+import {getData, setData} from './storageUtility.js'
+
 /**
  * @desc Completed button click event.
  * @param buttonId - name of the completed item
  */
 export function onCompletButtonClick(buttonId) {
     let id = buttonId.parentNode.parentNode.parentNode.id;
-
     let toDoItem = findDOMElement(id).firstElementChild;
     if (!toDoItem)return;
 

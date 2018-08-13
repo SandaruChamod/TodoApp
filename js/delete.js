@@ -1,4 +1,4 @@
-import {dataList,spliceFromDataList} from './main.js'
+import {dataList, spliceFromDataList} from './main.js'
 import {findDOMElement} from './util.js'
 import {setData} from './storageUtility.js'
 
@@ -13,6 +13,7 @@ export function onDeleteButtonClick(buttonId) {
 
     let item = findDOMElement(id);
     if (!item) return;
+
 
     spliceFromDataList(index);
     item.remove();

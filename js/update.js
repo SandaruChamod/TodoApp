@@ -1,4 +1,4 @@
-import {dataList,reloadPage} from './main.js'
+import {dataList, reloadPage} from './main.js'
 import {findDOMElement} from './util.js'
 import {setData} from './storageUtility.js'
 
@@ -22,6 +22,7 @@ export function onBlurFromBody(id, newValue) {
         }
     }
 }
+
 
 /**
  * @desc Keydown event.

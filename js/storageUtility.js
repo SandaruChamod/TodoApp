@@ -8,6 +8,7 @@ export function getData(key) {
     return LIST_OF_DATA !== null ? JSON.parse(LIST_OF_DATA) : [];
 }
 
+
 /**
  * @desc Set data to localStorage
  * @param key - key value to store
