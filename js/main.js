@@ -1,5 +1,6 @@
 import {addDOMItem} from './add.js'
 import {getData} from './storageUtility.js'
+import {loadDOMElements} from "./util.js";
 /*
     Array for store to-dos
  */
@@ -19,6 +20,8 @@ window.onload = function () {
     if (dataList.length > 0) {
         for (let i=0;i<dataList.length;i++)addDOMItem(dataList[i]._itemName,dataList[i]._completed);
         domList = document.querySelectorAll('.wrapper');
+    }else {
+        loadDOMElements();
     }
 };
 

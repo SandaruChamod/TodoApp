@@ -61,6 +61,10 @@ body {
     margin: 0 auto;
 }
 
+.check-items{
+    display: none; !important;
+}
+
 .curve {
     border-radius: 15px !important;
 }
