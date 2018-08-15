@@ -4,10 +4,9 @@
  * @return list - success or failure
  */
 export function getData(key) {
-    const LIST_OF_DATA = localStorage.getItem(key);
-    return LIST_OF_DATA !== null ? JSON.parse(LIST_OF_DATA) : [];
+    const listOfData = localStorage.getItem(key);
+    return listOfData !== null ? JSON.parse(listOfData) : [];
 }
-
 
 /**
  * @desc Set data to localStorage

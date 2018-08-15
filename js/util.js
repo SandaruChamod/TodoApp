@@ -13,8 +13,8 @@ export function findComponentById(id) {
  * @param id - component's id
  */
 export function findDOMElement(id) {
-    const DOM_ARRAY = Array.from(domList);
-    return DOM_ARRAY.find(item => item.firstElementChild.id === id);
+    const domArray = Array.from(domList);
+    return domArray.find(item => item.firstElementChild.id === id);
 }
 
 /**

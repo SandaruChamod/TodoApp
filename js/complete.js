@@ -1,7 +1,7 @@
 import {dataList, setDataList} from './main.js'
 import {findDOMElement} from './util.js'
 import {addDOMItem} from './add.js'
-import {getData, setData} from './storageUtility.js'
+import {getData, setData} from './storage-util.js'
 
 /**
  * @desc Completed button click event.
@@ -12,7 +12,7 @@ export function onCompletButtonClick(buttonId) {
     let toDoItem = findDOMElement(id).firstElementChild;
     if (!toDoItem)return;
 
-    setDataList(getData("todoList"));
+    setDataList(getData('todoList'));
 
     let item = dataList.find(item => item._itemName === id);
     if (!item)return;
@@ -29,5 +29,5 @@ export function onCompletButtonClick(buttonId) {
         if (itemToDelete)itemToDelete.remove();
         addDOMItem(item._itemName,true);
     }
-    setData("todoList", dataList);
+    setData('todoList', dataList);
 }
