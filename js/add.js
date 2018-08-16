@@ -9,7 +9,10 @@ import Todo from "./todo.js";
  */
 findComponentById('addBtn').addEventListener('click', function (e) {
     const inputTextValue = findComponentById('activityText').value;
-    if (!inputTextValue) return;
+    if (!inputTextValue) {
+        this.blur();
+        return;
+    }
     if ((getData('todoList')).length > 0) {
         setDataList(getData('todoList'));
     }
