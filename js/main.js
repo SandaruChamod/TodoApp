@@ -8,12 +8,12 @@ import {onDeleteButtonClick} from './delete.js'
 /*
     Array for store to-dos
  */
-export var dataList;
+export let dataList;
 
 /*
     Array for store DOM elements
  */
-export var domList=[];
+export let domList = [];
 
 /**
  * @desc Document load event.
