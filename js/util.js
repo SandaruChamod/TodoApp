@@ -20,7 +20,7 @@ export function findDOMElement(id) {
 /**
  *  Check to-dos exists or not
  */
-function checkItemList() {
+export function checkItemList() {
     let placeHolder = findComponentById('placeHolder');
     if (document.querySelectorAll('.wrapper').length === 0){
         placeHolder.classList.remove('check-items');

@@ -1,6 +1,6 @@
 import {addDOMItem} from './add.js'
 import {getData} from './storage-util.js'
-import {loadDOMElements} from "./util.js"
+import {checkItemList} from "./util.js"
 import {onCompletButtonClick} from './complete.js'
 import {onBlurFromBody, onKeyDown} from './update.js'
 import {onDeleteButtonClick} from './delete.js'
@@ -24,7 +24,7 @@ window.onload = function () {
         for (let i=0;i<dataList.length;i++)addDOMItem(dataList[i]._itemName,dataList[i]._completed);
         domList = document.querySelectorAll('.wrapper');
     }else {
-        loadDOMElements();
+        checkItemList();
     }
 };
 
