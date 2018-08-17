@@ -37,3 +37,15 @@ export function loadDOMElements() {
     setDOMList(document.querySelectorAll('.wrapper'));
 }
 
+/**
+ *  View Notification
+ */
+export function viewNotification(message, status, position, time) {
+    UIkit.notification({
+        message: message,
+        status: status,
+        pos: position,
+        timeout: time
+    });
+}
+

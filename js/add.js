@@ -1,5 +1,5 @@
 import {dataList, initFunctions, pushDataToDataList, setDataList} from './main.js'
-import {findComponentById, loadDOMElements} from './util.js'
+import {findComponentById, loadDOMElements, viewNotification} from './util.js'
 import {getData, setData} from './storage-util.js'
 import Todo from "./todo.js";
 
@@ -11,6 +11,7 @@ findComponentById('addBtn').addEventListener('click', function (e) {
     const inputTextValue = findComponentById('activityText').value;
     if (!inputTextValue) {
         this.blur();
+        viewNotification("Nothig to add!", 'primary', 'top-left', 1000);
         return;
     }
     if ((getData('todoList')).length > 0) {

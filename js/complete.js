@@ -1,5 +1,5 @@
 import {dataList, setDataList} from './main.js'
-import {findDOMElement} from './util.js'
+import {findDOMElement, viewNotification} from './util.js'
 import {addDOMItem} from './add.js'
 import {getData, setData} from './storage-util.js'
 
@@ -28,6 +28,7 @@ export function onCompletButtonClick(buttonId) {
         let itemToDelete = findDOMElement(id);
         if (itemToDelete)itemToDelete.remove();
         addDOMItem(item._itemName,true);
+        viewNotification("<i class='far fa-laugh-wink'></i> Cool!", 'success', 'top-left', 1000);
     }
     setData('todoList', dataList);
 }
